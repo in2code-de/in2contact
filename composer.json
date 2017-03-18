@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "In2code\\in2contact\\": "Classes/"
+      "In2code\\In2contact\\": "Classes/"
     }
   }
 }
