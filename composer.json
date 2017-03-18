@@ -1,5 +1,5 @@
 {
-  "name": "in2code/in2contacts",
+  "name": "in2code/in2contact",
   "description": "Generic contact extension",
   "keywords": ["typo3", "persons", "contacts", "address"],
   "homepage": "https://bitbucket.org/in2code/in2codegmbh-personendatenbank",
@@ -15,12 +15,12 @@
     "typo3/cms-core": ">=7.6.0 <9.0.0"
   },
   "replace": {
-    "in2contacts": "self.version",
-    "typo3-ter/in2contacts": "self.version"
+    "in2contact": "self.version",
+    "typo3-ter/in2contact": "self.version"
   },
   "autoload": {
     "psr-4": {
-      "In2code\\In2contacts\\": "Classes/"
+      "In2code\\in2contact\\": "Classes/"
     }
   }
 }
