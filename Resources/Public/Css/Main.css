@@ -1,0 +1,33 @@
+.tx-in2contact {
+    margin-top: 40px;
+}
+
+.contactbox {
+    position: relative;
+    display: block;
+    background: #D6D9DE;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.contactbox h3 {
+    display: inline-block;
+    vertical-align: top;
+    margin: 25px;
+    color: #444;
+}
+
+.contactbox button {
+    position: absolute;
+    bottom: 25px;
+    left: 325px;
+}
+
+.contactbox:nth-child(odd) {
+    margin-right: 5px;
+}
+
+.contactbox:nth-child(even) {
+    margin-left: 5px;
+}

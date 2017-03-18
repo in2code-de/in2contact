@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-03-17T22:42:52Z" product-name="in2contact">
+		<header/>
+		<body>
+			<trans-unit id="tx_in2contact_domain_model_contact">
+				<source>Contact</source>
+				<target state="translated">Kontakt</target>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.gender">
+				<source>Gender</source>
+				<target state="translated">Geschlecht</target>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.title">
+				<source>Title</source>
+				<target state="translated">Titel</target>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.first_name">
+				<source>First Name</source>
+				<target state="translated">Vorname</target>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.last_name">
+				<source>Last Name</source>
+				<target state="translated">Nachname</target>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.company">
+				<source>Company</source>
+				<target state="translated">Firma</target>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.phone">
+				<source>Phone</source>
+				<target state="translated">Telefon</target>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.fax">
+				<source>Fax</source>
+				<target state="translated">Fax</target>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.email">
+				<source>Email</source>
+				<target state="translated">E-Mail</target>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.link">
+				<source>Link</source>
+				<target state="translated">Link</target>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.description">
+				<source>Description</source>
+				<target state="translated">Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.date_of_birth">
+				<source>Date Of Birth</source>
+				<target state="translated">Geburtstag</target>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.image">
+				<source>Image</source>
+				<target state="translated">Bild</target>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.attachments">
+				<source>Attachments</source>
+				<target state="translated">Anhänge</target>
+			</trans-unit>
+
+			<trans-unit id="view.list.more">
+				<source>Want to know more</source>
+				<target state="translated">Mehr erfahren</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

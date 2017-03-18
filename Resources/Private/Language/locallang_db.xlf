@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-03-17T22:42:52Z" product-name="in2contact">
+		<header/>
+		<body>
+			<trans-unit id="tx_in2contact_domain_model_contact">
+				<source>Contact</source>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.gender">
+				<source>Gender</source>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.first_name">
+				<source>First Name</source>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.last_name">
+				<source>Last Name</source>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.company">
+				<source>Company</source>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.phone">
+				<source>Phone</source>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.fax">
+				<source>Fax</source>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.link">
+				<source>Link</source>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.date_of_birth">
+				<source>Date Of Birth</source>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.attachments">
+				<source>Attachments</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.main">
+				<source>Main settings</source>
+			</trans-unit>
+			<trans-unit id="flexform.main.view">
+				<source>Choose view</source>
+			</trans-unit>
+			<trans-unit id="flexform.main.view.1">
+				<source>Listview small</source>
+			</trans-unit>
+			<trans-unit id="flexform.main.view.2">
+				<source>Listview table</source>
+			</trans-unit>
+			<trans-unit id="flexform.list">
+				<source>List settings</source>
+			</trans-unit>
+			<trans-unit id="flexform.list.showFilter">
+				<source>Show filter</source>
+			</trans-unit>
+			<trans-unit id="flexform.list.detail">
+				<source>Page with detail view</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,17 @@
+<f:layout name="Default" />
+
+
+<f:section name="main">
+    <div class="row">
+        <f:for each="{contacts}" as="contact">
+            <div class="col-md-6">
+                <f:link.action action="show" arguments="{contact:contact}" class="contactbox">
+                    <f:image image="{contact.image}" width="300c" height="300c" />
+                    <h3>{contact.titleAndName}</h3>
+                    <button class="btn btn-info btn-lg" type="button">
+                        <f:translate key="view.list.more">More...</f:translate></button>
+                </f:link.action>
+            </div>
+        </f:for>
+    </div>
+</f:section>

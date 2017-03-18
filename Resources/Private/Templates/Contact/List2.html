@@ -1,0 +1,35 @@
+<f:layout name="Default" />
+
+
+<f:section name="main">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th><f:translate key="tx_in2contact_domain_model_contact.last_name">Lastname</f:translate></th>
+                <th><f:translate key="tx_in2contact_domain_model_contact.first_name">Firstname</f:translate></th>
+                <th><f:translate key="tx_in2contact_domain_model_contact.description">Description</f:translate></th>
+                <th><f:translate key="tx_in2contact_domain_model_contact.company">Company</f:translate></th>
+                <th><f:translate key="tx_in2contact_domain_model_contact.email">Email</f:translate></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <f:for each="{contacts}" as="contact" iteration="i">
+                <tr>
+                    <td>{i.cycle}.</td>
+                    <td>{contact.lastName}</td>
+                    <td>{contact.firstName}</td>
+                    <td><f:format.crop maxCharacters="40" append="..."><f:format.raw>{contact.description}</f:format.raw></f:format.crop></td>
+                    <td>{contact.company}</td>
+                    <td><f:link.email email="{contact.email}">E-Mail schicken</f:link.email></td>
+                    <td>
+                        <f:link.action action="show" arguments="{contact:contact}" class="btn btn-info">
+                            <f:translate key="view.list.more">More...</f:translate>
+                        </f:link.action>
+                    </td>
+                </tr>
+            </f:for>
+        </tbody>
+    </table>
+</f:section>
