@@ -46,6 +46,13 @@
 				<source>Attachments</source>
 			</trans-unit>
 
+			<trans-unit id="plugin1.title">
+				<source>Personlisting</source>
+			</trans-unit>
+			<trans-unit id="plugin1.description">
+				<source>Listing of persons and contacts with all needed details</source>
+			</trans-unit>
+
 			<trans-unit id="flexform.main">
 				<source>Main settings</source>
 			</trans-unit>

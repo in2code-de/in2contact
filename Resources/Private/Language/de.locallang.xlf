@@ -60,6 +60,15 @@
 				<target state="translated">Anhänge</target>
 			</trans-unit>
 
+			<trans-unit id="plugin1.title">
+				<source>Personlisting</source>
+				<target state="translated">Personenliste</target>
+			</trans-unit>
+			<trans-unit id="plugin1.description">
+				<source>Listing of persons and contacts with all needed details</source>
+				<target state="translated">Auflistung von Personen mit allen Details</target>
+			</trans-unit>
+
 			<trans-unit id="view.list.more">
 				<source>Want to know more</source>
 				<target state="translated">Mehr erfahren</target>

@@ -2,6 +2,7 @@
 namespace In2code\In2contact\Domain\Repository;
 
 use In2code\In2contact\Domain\Model\Transfer\FilterDto;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 
 /**
@@ -14,21 +15,21 @@ class ContactRepository extends AbstractRepository
      * @param FilterDto $filter
      * @return QueryResultInterface
      */
-    public function findByFilter(FilterDto $filter): QueryResultInterface
+    public function findByFilter(FilterDto $filter = null): QueryResultInterface
     {
         $query = $this->createQuery();
-        $this->extendQueryForSearchFilter($filter, $query);
+        $this->extendQueryForSearchFilter($query, $filter);
         return $query->execute();
     }
 
     /**
-     * @param FilterDto $filter
-     * @param $query
+     * @param QueryInterface $query
+     * @param FilterDto|null $filter
      * @return void
      */
-    protected function extendQueryForSearchFilter(FilterDto $filter, $query)
+    protected function extendQueryForSearchFilter(QueryInterface $query, FilterDto $filter = null)
     {
-        if ($filter->getSearchterm() !== '') {
+        if ($filter !== null && $filter->getSearchterm() !== '') {
             $logicalAnd = [];
             foreach ($filter->getSearchterms() as $term) {
                 $logicalOr = [];

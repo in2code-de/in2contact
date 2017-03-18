@@ -19,21 +19,21 @@ call_user_func(
         // wizards
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
             'mod {
-            wizards.newContentElement.wizardItems.plugins {
-                elements {
-                    pi1 {
-                        icon = ' . \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('in2contact') . 'Resources/Public/Icons/user_plugin_pi1.svg
-                        title = LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:tx_in2contact_domain_model_pi1
-                        description = LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:tx_in2contact_domain_model_pi1.description
-                        tt_content_defValues {
-                            CType = list
-                            list_type = in2contact_pi1
+                wizards.newContentElement.wizardItems.plugins {
+                    elements {
+                        pi1 {
+                            iconIdentifier = in2contact-plugin1
+                            title = LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:plugin1.title
+                            description = LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:plugin1.description
+                            tt_content_defValues {
+                                CType = list
+                                list_type = in2contact_pi1
+                            }
                         }
                     }
+                    show = *
                 }
-                show = *
-            }
-       }'
+            }'
         );
     }
 );

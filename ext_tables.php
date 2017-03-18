@@ -8,22 +8,35 @@ call_user_func(
             'Pi1',
             'Personenliste'
         );
+
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
             'in2contact',
             'Configuration/TypoScript',
             'In2contact'
         );
+
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages(
             'tx_in2contact_domain_model_contact'
         );
+
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::makeCategorizable(
             'in2contact',
             'tx_in2contact_domain_model_contact'
         );
+
         $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['in2contact_pi1'] = 'pi_flexform';
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
             'in2contact_pi1',
             'FILE:EXT:in2contact/Configuration/FlexForm/FlexFormPi1.xml'
+        );
+
+        $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+            \TYPO3\CMS\Core\Imaging\IconRegistry::class
+        );
+        $iconRegistry->registerIcon(
+            'in2contact-plugin1',
+            \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+            ['source' => 'EXT:in2contact/ext_icon.svg']
         );
     }
 );
