@@ -26,6 +26,10 @@
                                         <numIndex index="0">LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:flexform.main.view.2</numIndex>
                                         <numIndex index="1">Contact->list2;</numIndex>
                                     </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:flexform.main.view.3</numIndex>
+                                        <numIndex index="1">Contact->show;</numIndex>
+                                    </numIndex>
                                 </items>
                                 <size>1</size>
                             </config>

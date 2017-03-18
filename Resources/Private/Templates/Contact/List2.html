@@ -26,7 +26,7 @@
                     <td>{contact.company}</td>
                     <td><f:link.email email="{contact.email}">E-Mail schicken</f:link.email></td>
                     <td>
-                        <f:link.action action="show" arguments="{contact:contact}" class="btn btn-info">
+                        <f:link.action pageUid="{settings.list.detail}" action="show" arguments="{contact:contact}" class="btn btn-info">
                             <f:translate key="view.list.more">More...</f:translate>
                         </f:link.action>
                     </td>

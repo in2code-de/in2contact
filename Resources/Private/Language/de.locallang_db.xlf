@@ -76,6 +76,10 @@
 				<source>Listview table</source>
 				<target state="translated">Listenansicht tabellarisch</target>
 			</trans-unit>
+			<trans-unit id="flexform.main.view.3">
+				<source>Detailview</source>
+				<target state="translated">Detailansicht</target>
+			</trans-unit>
 			<trans-unit id="flexform.list">
 				<source>List settings</source>
 				<target state="translated">Listenansicht</target>

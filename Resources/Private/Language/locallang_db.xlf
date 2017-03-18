@@ -65,6 +65,9 @@
 			<trans-unit id="flexform.main.view.2">
 				<source>Listview table</source>
 			</trans-unit>
+			<trans-unit id="flexform.main.view.3">
+				<source>Detailview</source>
+			</trans-unit>
 			<trans-unit id="flexform.list">
 				<source>List settings</source>
 			</trans-unit>
