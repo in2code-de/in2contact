@@ -14,10 +14,6 @@
   "require": {
     "typo3/cms-core": ">=7.6.0 <9.0.0"
   },
-  "replace": {
-    "in2contact": "self.version",
-    "typo3-ter/in2contact": "self.version"
-  },
   "autoload": {
     "psr-4": {
       "In2code\\In2contact\\": "Classes/"
