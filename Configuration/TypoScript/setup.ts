@@ -15,7 +15,6 @@ plugin.tx_in2contact_pi1 {
     }
     features {
         skipDefaultArguments = 1
-        requireCHashArgumentForActionArguments = 1
     }
     mvc {
         callDefaultActionIfActionCantBeResolved = 1

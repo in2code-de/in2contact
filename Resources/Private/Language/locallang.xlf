@@ -49,6 +49,15 @@
 			<trans-unit id="view.list.more">
 				<source>Want to know more</source>
 			</trans-unit>
+			<trans-unit id="view.list.filter.searchterm.label">
+				<source>Searchterm</source>
+			</trans-unit>
+			<trans-unit id="view.list.filter.searchterm.placeholder">
+				<source>John Doe</source>
+			</trans-unit>
+			<trans-unit id="view.list.filter.searchterm.submit">
+				<source>Search now</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

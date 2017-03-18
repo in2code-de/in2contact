@@ -2,6 +2,7 @@
 namespace In2code\In2contact\Controller;
 
 use In2code\In2contact\Domain\Model\Contact;
+use In2code\In2contact\Domain\Model\Transfer\FilterDto;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -16,21 +17,29 @@ class ContactController extends ActionController
     protected $contactRepository = null;
 
     /**
+     * @param FilterDto|null $filter
      * @return void
      */
-    public function listAction()
+    public function listAction(FilterDto $filter = null)
     {
-        $contacts = $this->contactRepository->findAll();
-        $this->view->assign('contacts', $contacts);
+        $contacts = $this->contactRepository->findByFilter($filter);
+        $this->view->assignMultiple([
+            'contacts' => $contacts,
+            'filter' => $filter
+        ]);
     }
 
     /**
+     * @param FilterDto|null $filter
      * @return void
      */
-    public function list2Action()
+    public function list2Action(FilterDto $filter = null)
     {
-        $contacts = $this->contactRepository->findAll();
-        $this->view->assign('contacts', $contacts);
+        $contacts = $this->contactRepository->findByFilter($filter);
+        $this->view->assignMultiple([
+            'contacts' => $contacts,
+            'filter' => $filter
+        ]);
     }
 
     /**

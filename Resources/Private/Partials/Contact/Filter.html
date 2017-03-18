@@ -1,0 +1,15 @@
+<f:if condition="{settings.list.showFilter">
+	<f:form name="filter" object="{filter}">
+		<div class="form-group">
+			<label for="searchterm"><f:translate key="view.list.filter.searchterm.label">Searchterm</f:translate></label>
+			<f:form.textfield
+					property="searchterm"
+					class="form-control"
+					id="searchterm"
+					placeholder="{f:translate(key:'view.list.filter.searchterm.placeholder')}" />
+		</div>
+		<div class="form-group text-right">
+			<button type="submit" class="btn btn-primary"><f:translate key="view.list.filter.searchterm.submit">Search</f:translate></button>
+		</div>
+	</f:form>
+</f:if>

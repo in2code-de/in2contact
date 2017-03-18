@@ -64,6 +64,18 @@
 				<source>Want to know more</source>
 				<target state="translated">Mehr erfahren</target>
 			</trans-unit>
+			<trans-unit id="view.list.filter.searchterm.label">
+				<source>Searchterm</source>
+				<target state="translated">Suchbegriff</target>
+			</trans-unit>
+			<trans-unit id="view.list.filter.searchterm.placeholder">
+				<source>John Doe</source>
+				<target state="translated">Max Müller</target>
+			</trans-unit>
+			<trans-unit id="view.list.filter.searchterm.submit">
+				<source>Search now</source>
+				<target state="translated">Jetzt suchen</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
