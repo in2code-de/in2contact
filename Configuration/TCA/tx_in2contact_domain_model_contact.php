@@ -18,14 +18,21 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'gender,title,first_name,last_name,company,phone,fax,email,link,description,date_of_birth,image,attachments',
-        'iconfile' => 'EXT:in2contact/Resources/Public/Icons/tx_in2contact_domain_model_contact.gif'
+        'searchFields' => 'title,first_name,last_name,company,phone,fax,email,link,description,date_of_birth',
+        'iconfile' => 'EXT:in2contact/Resources/Public/Icons/tx_in2contact_domain_model_contact.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, gender, title, first_name, last_name, company, phone, fax, email, link, description, date_of_birth, image, attachments',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, gender, ' .
+            'title, first_name, last_name, company, phone, fax, email, link, description, date_of_birth, ' .
+            'image, attachments',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, gender, title, first_name, last_name, company, phone, fax, email, link, description, date_of_birth, image, attachments, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => [
+            'showitem' => 'gender, title, first_name, last_name, company, phone, fax, email, link, description, ' .
+                'date_of_birth, image, attachments, ' .
+                '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, sys_language_uid,' .
+                ' l10n_parent, l10n_diffsource, hidden, starttime, endtime'
+        ],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -56,7 +63,8 @@ return [
                     ['', 0],
                 ],
                 'foreign_table' => 'tx_in2contact_domain_model_contact',
-                'foreign_table_where' => 'AND tx_in2contact_domain_model_contact.pid=###CURRENT_PID### AND tx_in2contact_domain_model_contact.sys_language_uid IN (-1,0)',
+                'foreign_table_where' => 'AND tx_in2contact_domain_model_contact.pid=###CURRENT_PID### ' .
+                    'AND tx_in2contact_domain_model_contact.sys_language_uid IN (-1,0)',
             ],
         ],
         'l10n_diffsource' => [
@@ -112,16 +120,34 @@ return [
 
         'gender' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:tx_in2contact_domain_model_contact.gender',
+            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:' .
+                'tx_in2contact_domain_model_contact.gender',
             'config' => [
-                'type' => 'input',
-                'size' => 4,
-                'eval' => 'int'
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    [
+                        '',
+                        0
+                    ],
+                    [
+                        'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:' .
+                        'tx_in2contact_domain_model_contact.gender.1',
+                        1
+                    ],
+                    [
+                        'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:' .
+                        'tx_in2contact_domain_model_contact.gender.2',
+                        2
+                    ]
+                ],
+                'default' => 0,
             ]
         ],
         'title' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:tx_in2contact_domain_model_contact.title',
+            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:' .
+                'tx_in2contact_domain_model_contact.title',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -130,7 +156,8 @@ return [
         ],
         'first_name' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:tx_in2contact_domain_model_contact.first_name',
+            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:' .
+                'tx_in2contact_domain_model_contact.first_name',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -139,7 +166,8 @@ return [
         ],
         'last_name' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:tx_in2contact_domain_model_contact.last_name',
+            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:' .
+                'tx_in2contact_domain_model_contact.last_name',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -148,7 +176,8 @@ return [
         ],
         'company' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:tx_in2contact_domain_model_contact.company',
+            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:' .
+                'tx_in2contact_domain_model_contact.company',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -157,7 +186,8 @@ return [
         ],
         'phone' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:tx_in2contact_domain_model_contact.phone',
+            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:' .
+                'tx_in2contact_domain_model_contact.phone',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -166,7 +196,8 @@ return [
         ],
         'fax' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:tx_in2contact_domain_model_contact.fax',
+            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:' .
+                'tx_in2contact_domain_model_contact.fax',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -175,7 +206,8 @@ return [
         ],
         'email' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:tx_in2contact_domain_model_contact.email',
+            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:' .
+                'tx_in2contact_domain_model_contact.email',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -184,16 +216,35 @@ return [
         ],
         'link' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:tx_in2contact_domain_model_contact.link',
+            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:' .
+                'tx_in2contact_domain_model_contact.link',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
+                'eval' => 'trim',
+                'wizards' => [
+                    'link' => [
+                        'type' => 'popup',
+                        'title' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:' .
+                            'header_link_formlabel',
+                        'icon' => 'actions-wizard-link',
+                        'module' => [
+                            'name' => 'wizard_link',
+                        ],
+                        'JSopenParams' => 'height=800,width=600,status=0,menubar=0,scrollbars=1',
+                        'params' => [
+                            'blindLinkOptions' => 'mail,page,spec,url,folder',
+                            'blindLinkFields' => 'class,params,target,title',
+                            'allowedExtensions' => 'svg',
+                        ],
+                    ],
+                ],
             ],
         ],
         'description' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:tx_in2contact_domain_model_contact.description',
+            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:' .
+                'tx_in2contact_domain_model_contact.description',
             'config' => [
                 'type' => 'text',
                 'cols' => 40,
@@ -204,7 +255,8 @@ return [
         ],
         'date_of_birth' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:tx_in2contact_domain_model_contact.date_of_birth',
+            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:' .
+                'tx_in2contact_domain_model_contact.date_of_birth',
             'config' => [
                 'type' => 'input',
                 'size' => 7,
@@ -214,12 +266,14 @@ return [
         ],
         'image' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:tx_in2contact_domain_model_contact.image',
+            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:' .
+                'tx_in2contact_domain_model_contact.image',
             'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                 'image',
                 [
                     'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
+                        'createNewRelationLinkTitle' =>
+                            'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
                     ],
                     'foreign_types' => [
                         '0' => [
@@ -303,6 +357,6 @@ return [
                 ]
             ),
         ],
-    
+
     ],
 ];

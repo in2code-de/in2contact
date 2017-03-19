@@ -9,6 +9,12 @@
 			<trans-unit id="tx_in2contact_domain_model_contact.gender">
 				<source>Gender</source>
 			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.gender.1">
+				<source>female</source>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.gender.2">
+				<source>male</source>
+			</trans-unit>
 			<trans-unit id="tx_in2contact_domain_model_contact.title">
 				<source>Title</source>
 			</trans-unit>

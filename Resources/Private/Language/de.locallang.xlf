@@ -11,6 +11,14 @@
 				<source>Gender</source>
 				<target state="translated">Geschlecht</target>
 			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.gender.1">
+				<source>female</source>
+				<target state="translated">weiblich</target>
+			</trans-unit>
+			<trans-unit id="tx_in2contact_domain_model_contact.gender.2">
+				<source>male</source>
+				<target state="translated">männlich</target>
+			</trans-unit>
 			<trans-unit id="tx_in2contact_domain_model_contact.title">
 				<source>Title</source>
 				<target state="translated">Titel</target>
