@@ -25,7 +25,7 @@
                     <td><f:format.crop maxCharacters="40" append="..."><f:format.raw>{contact.description}</f:format.raw></f:format.crop></td>
                     <td>{contact.company}</td>
                     <td><f:link.email email="{contact.email}">E-Mail schicken</f:link.email></td>
-                    <td>
+                    <td class="text-align-right">
                         <f:link.action pageUid="{settings.list.detail}" action="show" arguments="{contact:contact}" class="btn btn-info">
                             <f:translate key="view.list.more">More...</f:translate>
                         </f:link.action>

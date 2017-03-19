@@ -1,23 +1,42 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
 
-This Template is responsible for displaying a single view for a domain object
-
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-  Resources:
-    Private:
-      Templates:
-        Show.html: keep
-
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
-
 <f:section name="main">
-<h1>Single View for Contact</h1>
-
-<f:flashMessages />
-<f:render partial="Contact/Properties" arguments="{contact:contact}" />
-<f:link.action action="list">Back to list</f:link.action><br />
-<f:link.action action="new">New Contact</f:link.action>
-	</f:section>
-</html>
+    <div class="jumbotron">
+        <h1>{contact.titleAndName}</h1>
+        <div class="row">
+            <div class="col-lg-8">
+                <f:if condition="{contact.company}">
+                    <p>{contact.company}</p>
+                </f:if>
+                <f:if condition="{contact.description}">
+                    <f:format.html>{contact.description}</f:format.html>
+                </f:if>
+                <f:if condition="{contact.phone}">
+                    <p><i class="fa fa-phone fa-fw"></i> {contact.phone}</p>
+                </f:if>
+                <f:if condition="{contact.phone}">
+                    <p><i class="fa fa-fax fa-fw"></i> {contact.fax}</p>
+                </f:if>
+                <f:if condition="{contact.email} || {contact.link}">
+                    <div class="btn-toolbar">
+                        <f:if condition="{contact.email}">
+                            <f:link.email
+                                    email="{contact.email}"
+                                    class="btn btn-primary btn-lg"><i class="fa fa-envelope fa-fw"></i> Write an email</f:link.email>
+                        </f:if>
+                        <f:if condition="{contact.link}">
+                            <f:link.typolink
+                                    parameter="{contact.link}"
+                                    class="btn btn-primary btn-lg"><i class="fa fa-link fa-fw"></i> More details</f:link.typolink>
+                        </f:if>
+                    </div>
+                </f:if>
+            </div>
+            <div class="col-lg-4">
+                <f:if condition="{contact.image}">
+                    <f:image image="{contact.image}" width="300" />
+                </f:if>
+            </div>
+        </div>
+    </div>
+</f:section>

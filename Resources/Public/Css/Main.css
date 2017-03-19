@@ -31,3 +31,7 @@
 .contactbox:nth-child(even) {
     margin-left: 5px;
 }
+
+.text-align-right {
+    text-align: right;
+}
