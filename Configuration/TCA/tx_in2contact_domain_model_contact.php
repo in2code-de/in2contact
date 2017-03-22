@@ -312,51 +312,50 @@ return [
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             ),
         ],
-        'attachments' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:tx_in2contact_domain_model_contact.attachments',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                'attachments',
-                [
-                    'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference'
-                    ],
-                    'foreign_types' => [
-                        '0' => [
-                            'showitem' => '
-                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
-                            'showitem' => '
-                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                            'showitem' => '
-                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
-                            'showitem' => '
-                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                            'showitem' => '
-                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
-                            'showitem' => '
-                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette'
-                        ]
-                    ],
-                    'maxitems' => 1
-                ]
-            ),
-        ],
-
+        //'attachments' => [
+        //    'exclude' => true,
+        //    'label' => 'LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:tx_in2contact_domain_model_contact.attachments',
+        //    'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+        //        'attachments',
+        //        [
+        //            'appearance' => [
+        //                'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference'
+        //            ],
+        //            'foreign_types' => [
+        //                '0' => [
+        //                    'showitem' => '
+        //                    --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+        //                    --palette--;;filePalette'
+        //                ],
+        //                \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+        //                    'showitem' => '
+        //                    --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+        //                    --palette--;;filePalette'
+        //                ],
+        //                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+        //                    'showitem' => '
+        //                    --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+        //                    --palette--;;filePalette'
+        //                ],
+        //                \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+        //                    'showitem' => '
+        //                    --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+        //                    --palette--;;filePalette'
+        //                ],
+        //                \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+        //                    'showitem' => '
+        //                    --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+        //                    --palette--;;filePalette'
+        //                ],
+        //                \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+        //                    'showitem' => '
+        //                    --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+        //                    --palette--;;filePalette'
+        //                ]
+        //            ],
+        //            'maxitems' => 1
+        //        ]
+        //    ),
+        //],
     ],
 ];
