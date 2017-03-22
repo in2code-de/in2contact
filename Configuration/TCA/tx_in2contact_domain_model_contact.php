@@ -233,7 +233,7 @@ return [
                         ],
                         'JSopenParams' => 'height=800,width=600,status=0,menubar=0,scrollbars=1',
                         'params' => [
-                            'blindLinkOptions' => 'mail,page,spec,url,folder',
+                            'blindLinkOptions' => 'mail,spec,folder',
                             'blindLinkFields' => 'class,params,target,title',
                             'allowedExtensions' => 'svg',
                         ],
