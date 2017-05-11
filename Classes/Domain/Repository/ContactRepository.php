@@ -18,7 +18,7 @@ class ContactRepository extends AbstractRepository
     public function findByFilter(FilterDto $filter = null): QueryResultInterface
     {
         $query = $this->createQuery();
-        $this->extendQueryForSearchFilter($query, $filter);
+        $this->extendQueryForFilter($query, $filter);
         return $query->execute();
     }
 
@@ -27,10 +27,25 @@ class ContactRepository extends AbstractRepository
      * @param FilterDto|null $filter
      * @return void
      */
-    protected function extendQueryForSearchFilter(QueryInterface $query, FilterDto $filter = null)
+    protected function extendQueryForFilter(QueryInterface $query, FilterDto $filter = null)
     {
-        if ($filter !== null && $filter->getSearchterm() !== '') {
+        if ($filter !== null) {
             $logicalAnd = [];
+            $logicalAnd = $this->extendQueryForFulltextSearch($query, $filter, $logicalAnd);
+            $logicalAnd = $this->extendQueryForAbcFilter($query, $filter, $logicalAnd);
+            $query->matching($query->logicalAnd($logicalAnd));
+        }
+    }
+
+    /**
+     * @param QueryInterface $query
+     * @param FilterDto $filter
+     * @param array $logicalAnd
+     * @return array
+     */
+    protected function extendQueryForFulltextSearch(QueryInterface $query, FilterDto $filter, array $logicalAnd): array
+    {
+        if ($filter->getSearchterm() !== '') {
             foreach ($filter->getSearchterms() as $term) {
                 $logicalOr = [];
                 $logicalOr[] = $query->like('firstName', '%' . $term . '%');
@@ -40,7 +55,21 @@ class ContactRepository extends AbstractRepository
                 $logicalOr[] = $query->like('email', '%' . $term . '%');
                 $logicalAnd[] = $query->logicalOr($logicalOr);
             }
-            $query->matching($query->logicalAnd($logicalAnd));
         }
+        return $logicalAnd;
+    }
+
+    /**
+     * @param QueryInterface $query
+     * @param FilterDto $filter
+     * @param array $logicalAnd
+     * @return array
+     */
+    protected function extendQueryForAbcFilter(QueryInterface $query, FilterDto $filter, array $logicalAnd): array
+    {
+        if ($filter->getCharacter() !== '') {
+            $logicalAnd[] = $query->like('lastName', $filter->getCharacter() . '%');
+        }
+        return $logicalAnd;
     }
 }

@@ -93,6 +93,10 @@
 				<source>Search now</source>
 				<target state="translated">Jetzt suchen</target>
 			</trans-unit>
+			<trans-unit id="view.list.filter.abc.all">
+				<source>Show all</source>
+				<target state="translated">Zeige alle</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

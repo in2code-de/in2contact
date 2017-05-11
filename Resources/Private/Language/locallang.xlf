@@ -58,6 +58,9 @@
 			<trans-unit id="view.list.filter.searchterm.submit">
 				<source>Search now</source>
 			</trans-unit>
+			<trans-unit id="view.list.filter.abc.all">
+				<source>Show all</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

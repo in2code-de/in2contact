@@ -2,7 +2,7 @@
   "name": "in2code/in2contact",
   "description": "Generic contact extension",
   "keywords": ["typo3", "persons", "contacts", "address"],
-  "homepage": "https://bitbucket.org/in2code/in2codegmbh-personendatenbank",
+  "homepage": "https://github.com/einpraegsam/in2contact/",
   "authors": [
     {
       "name": "Alex Kellner",
@@ -12,7 +12,7 @@
   "type": "typo3-cms-extension",
   "license": "GPL-3.0",
   "require": {
-    "typo3/cms-core": ">=7.6.0 <9.0.0"
+    "typo3/cms-core": ">=8.7.0 <9.0.0"
   },
   "autoload": {
     "psr-4": {

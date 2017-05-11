@@ -9,9 +9,18 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class FilterDto
 {
     /**
+     * Fulltext searchterm
+     *
      * @var string
      */
     protected $searchterm = '';
+
+    /**
+     * Leading character for ABC filter
+     *
+     * @var string
+     */
+    protected $character = '';
 
     /**
      * @return string
@@ -38,6 +47,24 @@ class FilterDto
     public function setSearchterm(string $searchterm)
     {
         $this->searchterm = $searchterm;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCharacter(): string
+    {
+        return $this->character;
+    }
+
+    /**
+     * @param string $character
+     * @return FilterDto
+     */
+    public function setCharacter(string $character)
+    {
+        $this->character = $character;
         return $this;
     }
 }
