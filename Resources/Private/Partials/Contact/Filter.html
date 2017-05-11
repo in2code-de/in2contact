@@ -1,4 +1,6 @@
-<f:if condition="{settings.list.showFilter">
+{namespace contact=In2code\In2contact\ViewHelpers}
+
+<f:if condition="{settings.list.showFilter}">
 	<f:form name="filter" object="{filter}">
 		<div class="form-group">
 			<label for="searchterm"><f:translate key="view.list.filter.searchterm.label">Searchterm</f:translate></label>
@@ -12,4 +14,28 @@
 			<button type="submit" class="btn btn-primary"><f:translate key="view.list.filter.searchterm.submit">Search</f:translate></button>
 		</div>
 	</f:form>
+</f:if>
+
+
+<f:if condition="{settings.list.showAbcFilter}">
+	<div class="form-group clearfix">
+		<div class="pull-right">
+			<ul class="pagination">
+				<f:if condition="{contact:form.isFilterArgumentExisting()}">
+					<li><f:link.page><f:translate key="view.list.filter.abc.all">All</f:translate></f:link.page></li>
+				</f:if>
+
+				<f:for each="{contact:form.getAbcArray()}" as="character">
+					<f:if condition="{contact:form.isContactExistingWithLeadingCharacter(contacts:contacts,character:character)}">
+						<f:then>
+							<li><f:link.page additionalParams="{tx_in2contact_pi1:'{filter:\'{character:character}\'}'}">{character}</f:link.page></li>
+						</f:then>
+						<f:else>
+							<li class="disabled"><a href="#">{character}</a></li>
+						</f:else>
+					</f:if>
+				</f:for>
+			</ul>
+		</div>
+	</div>
 </f:if>

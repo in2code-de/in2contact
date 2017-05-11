@@ -78,7 +78,10 @@
 				<source>List settings</source>
 			</trans-unit>
 			<trans-unit id="flexform.list.showFilter">
-				<source>Show filter</source>
+				<source>Show fulltext search</source>
+			</trans-unit>
+			<trans-unit id="flexform.list.showAbcFilter">
+				<source>Show ABC filter</source>
 			</trans-unit>
 			<trans-unit id="flexform.list.detail">
 				<source>Page with detail view</source>

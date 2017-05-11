@@ -85,8 +85,12 @@
 				<target state="translated">Listenansicht</target>
 			</trans-unit>
 			<trans-unit id="flexform.list.showFilter">
-				<source>Show filter</source>
-				<target state="translated">Blende Filter ein</target>
+				<source>Show fulltext search</source>
+				<target state="translated">Zeige Volltextsuche</target>
+			</trans-unit>
+			<trans-unit id="flexform.list.showAbcFilter">
+				<source>Show abc filter</source>
+				<target state="translated">Blende ABC Filter ein</target>
 			</trans-unit>
 			<trans-unit id="flexform.list.detail">
 				<source>Page with detail view</source>

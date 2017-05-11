@@ -55,6 +55,15 @@
                             </config>
                         </TCEforms>
                     </settings.list.showFilter>
+                    <settings.list.showAbcFilter>
+                        <TCEforms>
+                            <label>LLL:EXT:in2contact/Resources/Private/Language/locallang_db.xlf:flexform.list.showAbcFilter</label>
+                            <config>
+                                <type>check</type>
+                                <default>0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.list.showAbcFilter>
                     <settings.list.detail>
                         <TCEforms>
                             <exclude>1</exclude>

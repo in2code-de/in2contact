@@ -3,6 +3,8 @@ namespace In2code\In2contact\Controller;
 
 use In2code\In2contact\Domain\Model\Contact;
 use In2code\In2contact\Domain\Model\Transfer\FilterDto;
+use In2code\In2contact\Domain\Repository\ContactRepository;
+use TYPO3\CMS\Core\Messaging\AbstractMessage;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -11,10 +13,26 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class ContactController extends ActionController
 {
     /**
-     * @var \In2code\In2contact\Domain\Repository\ContactRepository
-     * @inject
+     * @var ContactRepository
      */
     protected $contactRepository = null;
+
+    /**
+     * @param ContactRepository $contactRepository
+     * @return void
+     */
+    public function injectContactRepository(ContactRepository $contactRepository)
+    {
+        $this->contactRepository = $contactRepository;
+    }
+
+    /**
+     * @return void
+     */
+    public function initializeListAction()
+    {
+        $this->allowFilterProperties();
+    }
 
     /**
      * @param FilterDto|null $filter
@@ -23,10 +41,20 @@ class ContactController extends ActionController
     public function listAction(FilterDto $filter = null)
     {
         $contacts = $this->contactRepository->findByFilter($filter);
-        $this->view->assignMultiple([
-            'contacts' => $contacts,
-            'filter' => $filter
-        ]);
+        $this->view->assignMultiple(
+            [
+                'contacts' => $contacts,
+                'filter' => $filter
+            ]
+        );
+    }
+
+    /**
+     * @return void
+     */
+    public function initializeList2Action()
+    {
+        $this->allowFilterProperties();
     }
 
     /**
@@ -36,10 +64,12 @@ class ContactController extends ActionController
     public function list2Action(FilterDto $filter = null)
     {
         $contacts = $this->contactRepository->findByFilter($filter);
-        $this->view->assignMultiple([
-            'contacts' => $contacts,
-            'filter' => $filter
-        ]);
+        $this->view->assignMultiple(
+            [
+                'contacts' => $contacts,
+                'filter' => $filter
+            ]
+        );
     }
 
     /**
@@ -64,7 +94,12 @@ class ContactController extends ActionController
      */
     public function createAction(Contact $newContact)
     {
-        $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/typo3cms/extensions/extension_builder/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+        $this->addFlashMessage(
+            'The object was created. Please be aware that this action is publicly accessible unless you implement an ' .
+            'access check. See https://docs.typo3.org/typo3cms/extensions/extension_builder/User/Index.html',
+            '',
+            AbstractMessage::WARNING
+        );
         $this->contactRepository->add($newContact);
         $this->redirect('list');
     }
@@ -85,7 +120,12 @@ class ContactController extends ActionController
      */
     public function updateAction(Contact $contact)
     {
-        $this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/typo3cms/extensions/extension_builder/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+        $this->addFlashMessage(
+            'The object was updated. Please be aware that this action is publicly accessible unless you implement an ' .
+            'access check. See https://docs.typo3.org/typo3cms/extensions/extension_builder/User/Index.html',
+            '',
+            AbstractMessage::WARNING
+        );
         $this->contactRepository->update($contact);
         $this->redirect('list');
     }
@@ -96,8 +136,23 @@ class ContactController extends ActionController
      */
     public function deleteAction(Contact $contact)
     {
-        $this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/typo3cms/extensions/extension_builder/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+        $this->addFlashMessage(
+            'The object was deleted. Please be aware that this action is publicly accessible unless you implement an ' .
+            'access check. See https://docs.typo3.org/typo3cms/extensions/extension_builder/User/Index.html',
+            '',
+            AbstractMessage::WARNING
+        );
         $this->contactRepository->remove($contact);
         $this->redirect('list');
+    }
+
+    /**
+     * @return void
+     */
+    protected function allowFilterProperties()
+    {
+        $filterArgument = $this->arguments->getArgument('filter');
+        $propertyMapping = $filterArgument->getPropertyMappingConfiguration();
+        $propertyMapping->allowProperties('character');
     }
 }
