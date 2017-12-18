@@ -44,6 +44,7 @@ https://www.in2code.de/produkte/personendatenbank/
 
 | Version    | Date       | State      | Description                                                                  |
 | ---------- | ---------- | ---------- | ---------------------------------------------------------------------------- |
+| 1.2.2      | 2017-12-15 | Bugfix     | Disable chash check for plugin                                               |
 | 1.2.1      | 2017-05-11 | Bugfix     | Update cms requirement in composer.json                                      |
 | 1.2.0      | 2017-05-11 | Feature    | Add an ABC filter                                                            |
 | 1.1.0      | 2017-03-22 | Task       | Remove unneeded fields, some cleanup                                         |
