@@ -269,7 +269,7 @@ class Contact extends AbstractEntity
     /**
      * @return \DateTime $dateOfBirth
      */
-    public function getDateOfBirth(): \DateTime
+    public function getDateOfBirth()
     {
         return $this->dateOfBirth;
     }
